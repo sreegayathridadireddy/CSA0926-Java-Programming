@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class Reverse {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of integers: ");
+        int n = scanner.nextInt();
+        int[] numbers = new int[n];
+
+        if (n <= 0) {
+            System.out.println("Error: The number of integers should be greater than zero.");
+            return;
+        }
+
+        System.out.println("Enter the integers:");
+        for (int i = 0; i < n; i++) {
+            numbers[i] = scanner.nextInt();
+        }
+
+        int lcm = findLCM(numbers);
+        int gcd = findGCD(numbers);
+
+        System.out.println("LCM = " + lcm);
+        System.out.println("GCD = " + gcd);
+    }
+
+    private static int findGCD(int[] numbers) {
+        int gcd = numbers[0];
+        for (int i = 1; i < numbers.length; i++) {
+            gcd = gcdGCD(gcd, numbers[i]);
+        }
+        return gcd;
+    }
+
+    private static int gcdGCD(int a, int b) {
+        if (b == 0) {
+            return a;
+        }
+        return gcdGCD(b, a % b);
+    }
+
+    private static int findLCM(int[] numbers) {
+        int lcm = numbers[0];
+        for (int i = 1; i < numbers.length; i++) {
+            lcm = lcmLCD(lcm, numbers[i]);
+        }
+        return lcm;
+    }
+
+    private static int lcmLCD(int a, int b) {
+        int lcm = Math.abs(a * b);
+        int gcd = gcdGCD(a, b);
+        return lcm / gcd;
+    }
+}
