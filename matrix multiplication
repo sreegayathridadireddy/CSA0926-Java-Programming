@@ -3,8 +3,7 @@ import java.util.Scanner;
 public class MatrixMultiplication {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        
-        // Input matrices
+ 
         int[][] mat1 = {
             {1, 2},
             {5, 3}
@@ -14,11 +13,9 @@ public class MatrixMultiplication {
             {2, 3},
             {4, 1}
         };
-        
-        // Resultant matrix
+ 
         int[][] result = new int[mat1.length][mat2[0].length];
-        
-        // Matrix multiplication
+
         for (int i = 0; i < mat1.length; i++) {
             for (int j = 0; j < mat2[0].length; j++) {
                 for (int k = 0; k < mat2.length; k++) {
@@ -26,8 +23,7 @@ public class MatrixMultiplication {
                 }
             }
         }
-        
-        // Displaying the result
+
         System.out.println("Mat Sum = ");
         for (int i = 0; i < result.length; i++) {
             for (int j = 0; j < result[0].length; j++) {
