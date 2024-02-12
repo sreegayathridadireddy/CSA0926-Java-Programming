@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Reverse {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a line of text: ");
+        String line = scanner.nextLine();
+        scanner.close();
+
+        int specialCharacterCount = 0;
+
+        System.out.println("Special characters in the line:");
+        for (int i = 0; i < line.length(); i++) {
+            char ch = line.charAt(i);
+            if (!Character.isLetter(ch) && !Character.isDigit(ch) && !Character.isWhitespace(ch)) {
+                System.out.println(ch);
+                specialCharacterCount++;
+            } else if (Character.isDigit(ch)) {
+                System.out.println("Invalid input: Numbers are not allowed.");
+                return; // exit the program immediately
+            }
+        }
+
+        System.out.println("Number of special characters in the line: " + specialCharacterCount);
+    }
+}
+
