@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class program {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        String input = scanner.next();
+        scanner.close();
+
+        int number;
+        try {
+            number = Integer.parseInt(input);
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input. Please enter an integer.");
+            return;
+        }
+
+        int sum = 0;
+        for (int i = 1; i < number; i++) {
+            if (number % i == 0) {
+                sum += i;
+            }
+        }
+        if (sum == number) {
+            System.out.println("It's a Perfect Number");
+        } else {
+            System.out.println("It's not a Perfect Number");
+        }
+    }
+}
