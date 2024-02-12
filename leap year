@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class Reverse {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter Date (MM/dd/yyyy): ");
+        String dateString = scanner.next();
+
+        int year = Integer.parseInt(dateString.substring(6, 10));
+
+        if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) {
+            System.out.println("Given year is a Leap Year");
+        } else {
+            System.out.println("Given year is a Non Leap Year");
+        }
+    }
+}
