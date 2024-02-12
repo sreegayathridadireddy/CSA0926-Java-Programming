@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class SquareAndCube {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a decimal number: ");
+        double number = scanner.nextDouble();
+        scanner.close();
+
+        double squareNumber = number * number;
+        double cubeNumber = number * number * number;
+
+        System.out.println("Square Number: " + squareNumber);
+        System.out.println("Cube Number: " + cubeNumber);
+    }
+}
